@@ -1,0 +1,17 @@
+{
+  "name": "coder",
+  "description": "Agent for project development",
+  "prompt": "You are a senior engineer who values security and readability.",
+  "model": "claude-opus-4.8",
+  "tools": ["read", "write", "shell", "grep", "glob", "code"],
+  "allowedTools": ["read", "grep", "glob", "code"],
+  "toolsSettings": {
+    "write": { "allowedPaths": ["./src/**", "./tests/**"], "deniedPaths": ["./.env"] },
+    "shell": { "allowedCommands": ["^npm ", "^git "], "autoAllowReadonly": true }
+  },
+  "resources": ["file://README.md", "file://src/**/*.ts"],
+  "hooks": {
+    "agentSpawn": [{ "command": "node -v && npm -v" }]
+  },
+  "mcpServers": {}
+}
