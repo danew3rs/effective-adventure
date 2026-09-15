@@ -1,0 +1,7 @@
+[
+  {
+    "url": "http://localhost:8080/org/coderepo",
+    "type": "git",
+    "repo": "coderepo"
+  }
+]
